@@ -63,7 +63,7 @@ function increaseOpacity() {
 
 function getWeatherInformation() {
 	fetch(
-		`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=321dc1f804a859eadfdb47b5acf0e2b0`
+		`https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=321dc1f804a859eadfdb47b5acf0e2b0`
 	)
 		.then((data) => data.json())
 		.then((data) => {
