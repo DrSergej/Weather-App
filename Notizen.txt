@@ -1,0 +1,11 @@
+Wellen
+
+Forecast, 3h oder 6h
+
+mit erwarteter Temp. und Icon
+
+Hintergrundbilder für versch. Szenarien
+
+Text-Styling
+
+Switch cases herausfinden

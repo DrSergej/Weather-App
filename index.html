@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./assets/css/style.css" />
+		<title>Wetter App</title>
+	</head>
+	<body onload="getTime()">
+		<main>
+			<section class="upper-section">
+				<div class="date-container">
+					<p class="date">&nbsp;</p>
+					<p class="time">&nbsp;</p>
+				</div>
+				<div class="current-conditions-container">
+					<p class="current-temp"></p>
+					<p class="location"></p>
+					<p class="current-weather"></p>
+					<div class="humidity">
+						<img class="current-weather-icon" src="" alt="" />
+						<img class="humidity-icon" src="./assets/img/humidity.png" alt="" />
+						<p class="current-humidity"></p>
+					</div>
+				</div>
+				<div class="wave-element wave-element-1"></div>
+				<div class="wave-element wave-element-2"></div>
+				<div class="wave-element wave-element-3">
+					<div class="sunrise-set-container">
+						<div class="sunrise">
+							<p class="sunrise-time">8:00</p>
+							<img
+								class="sunrise-icon"
+								src="./assets/img/sunrise.svg"
+								alt="sunrise"
+							/>
+						</div>
+						<div class="sunset">
+							<p class="sunrise-time">18:00</p>
+							<img
+								class="sunset-icon"
+								src="./assets/img/sunset.svg"
+								alt="sunset"
+							/>
+						</div>
+					</div>
+				</div>
+
+				<form>
+					<label class="button" for="input-field"><p>📌</p></label>
+					<div class="input-container">
+						<input type="text" id="input-field" />
+					</div>
+				</form>
+			</section>
+			<section class="lower-section">
+				<div class="temp-weather-container">
+					<div class="weather-item morning-item">
+						<p class="ueberschrift-tageszeit">Vormittag</p>
+						<p class="p-morning">°C</p>
+						<div class="forecast-icon-morning forecast-icon"></div>
+					</div>
+					<div class="weather-item day-item">
+						<p class="ueberschrift-tageszeit">Mittag</p>
+						<p class="p-day">°C</p>
+						<div class="forecast-icon-day forecast-icon"></div>
+					</div>
+					<div class="weather-item evening-item">
+						<p class="ueberschrift-tageszeit">Abend</p>
+						<p class="p-evening">°C</p>
+						<div class="forecast-icon-evening forecast-icon"></div>
+					</div>
+					<div class="weather-item night-item">
+						<p class="ueberschrift-tageszeit">Nacht</p>
+						<p class="p-night">°C</p>
+						<div class="forecast-icon-night forecast-icon"></div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<script src="./assets/js/main.js"></script>
+	</body>
+</html>
