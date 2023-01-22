@@ -587,7 +587,7 @@ section:nth-of-type(2) {
 	display: flex;
 	justify-content: flex-end;
 	height: 65px;
-	gap: 30px;
+	gap: 20px;
 	align-items: flex-end;
 }
 
@@ -605,7 +605,7 @@ section:nth-of-type(2) {
 }
 
 .sunrise-icon {
-	height: 45px;
+	height: 42px;
 	width: 45px;
 }
 
@@ -613,5 +613,9 @@ section:nth-of-type(2) {
 .sunset.time {
 	transform: rotate(180deg);
 	transform: scaleY(-1);
-	margin-left: 8px;
+	margin-left: 9px;
 }
+
+/* #sunrise.sunrise-time {
+	padding-bottom: 14px;
+} */

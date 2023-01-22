@@ -78,11 +78,15 @@ function getWeatherInformation() {
 			)
 				.then((data) => data.json())
 				.then((data) => {
-					// console.log(data);
+					console.log("current Weather:", data);
 					weatherInfoElement.style.opacity = 1;
+					const sunrise = document.getElementById("sunrise");
+					const sunset = document.getElementById("sunset");
 					const tempElement = document.querySelector(".current-temp");
-					const humidityElement = document.querySelector(".current-humidity");
-					const weatherElement = document.querySelector(".current-weather");
+					const humidityElement =
+						document.querySelector(".current-humidity");
+					const weatherElement =
+						document.querySelector(".current-weather");
 					const locationElement = document.querySelector(".location");
 					const weatherIconElement = document.querySelector(
 						".current-weather-icon"
@@ -91,13 +95,32 @@ function getWeatherInformation() {
 					let iconId = data.weather[0].icon;
 					weatherIconElement.src = `http://openweathermap.org/img/wn/${iconId}@2x.png`;
 
-					tempElement.textContent = Math.round(data.main.temp - 273.15) + "°C";
-					humidityElement.textContent = Math.round(data.main.humidity) + "%";
+					tempElement.textContent =
+						Math.round(data.main.temp - 273.15) + "°C";
+					humidityElement.textContent =
+						Math.round(data.main.humidity) + "%";
 					weatherElement.textContent = data.weather[0].description;
 					locationElement.textContent = city;
 
+					//  Sunrise / Sunset
+					let sunriseTime = new Date(data.sys.sunrise);
+					console.log("SunRise in dateFormat:", sunriseTime);
+					sunriseTime = sunriseTime.toLocaleTimeString([], {
+						hour: "2-digit",
+						minute: "2-digit",
+					});
+					let sunsetTime = new Date(data.sys.sunset);
+					console.log("SunSet in dateFormat:", sunsetTime);
+					sunsetTime = sunsetTime.toLocaleTimeString([], {
+						hour: "2-digit",
+						minute: "2-digit",
+					});
+					sunrise.innerText = sunriseTime;
+					sunset.innerText = sunsetTime;
+
 					// Set background image
-					const upperSectionElement = document.querySelector(".upper-section");
+					const upperSectionElement =
+						document.querySelector(".upper-section");
 
 					switch (data.weather[0].main) {
 						case "Clear":
@@ -146,17 +169,22 @@ function getWeatherInformation() {
 					const morningWeather = document.querySelector(
 						".forecast-icon-morning"
 					);
-					const dayWeather = document.querySelector(".forecast-icon-day");
+					const dayWeather =
+						document.querySelector(".forecast-icon-day");
 					const eveningWeather = document.querySelector(
 						".forecast-icon-evening"
 					);
-					const nightWeather = document.querySelector(".forecast-icon-night");
+					const nightWeather = document.querySelector(
+						".forecast-icon-night"
+					);
 					const forecastMorningTemperatur =
 						document.querySelector(".p-morning");
-					const forecastDayTemperatur = document.querySelector(".p-day");
+					const forecastDayTemperatur =
+						document.querySelector(".p-day");
 					const forecastEveningTemperatur =
 						document.querySelector(".p-evening");
-					const forecastNightTemperatur = document.querySelector(".p-night");
+					const forecastNightTemperatur =
+						document.querySelector(".p-night");
 
 					console.log("forecast", data);
 
@@ -189,17 +217,20 @@ function getWeatherInformation() {
 
 						switch (data.list[uhrzeit].weather[0].main) {
 							case "Clear":
-								tageszeit.style.backgroundImage = "url(./assets/img/clear.svg)";
+								tageszeit.style.backgroundImage =
+									"url(./assets/img/clear.svg)";
 								break;
 							case "Clouds":
 								tageszeit.style.backgroundImage =
 									"url(./assets/img/clouds2.svg)";
 								break;
 							case "Rain":
-								tageszeit.style.backgroundImage = "url(./assets/img/rain.svg)";
+								tageszeit.style.backgroundImage =
+									"url(./assets/img/rain.svg)";
 								break;
 							case "Snow":
-								tageszeit.style.backgroundImage = "url(./assets/img/snow.svg)";
+								tageszeit.style.backgroundImage =
+									"url(./assets/img/snow.svg)";
 								break;
 							case "Thunderstorm":
 								tageszeit.style.backgroundImage =
